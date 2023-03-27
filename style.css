@@ -9,7 +9,7 @@ body{
     margin: 0;
     padding: 0;
     overflow: hidden;
-    color: #555;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@ body{
 
 .container{
     width: 430px;
-    height: 700px;
+    height: 500px;
     padding: 5px 35px 35px;
     border-radius: 40px;
     background-color: #000;
@@ -41,6 +41,8 @@ input{
     border-radius: 5px;
     border: transparent;
     padding: 0 20px;
+    color: #fff;
+    font-size: 1.3rem;
 }
 h2{
     color: #f1f3e6;
@@ -49,7 +51,7 @@ h2{
     margin-bottom: 1rem;
 }
 ::placeholder{
-    color: rgb(228, 224, 224);
+    color: rgb(255, 255, 255);
 }
 select{
     margin: 10px 10px;
@@ -79,3 +81,4 @@ button:hover{
 a{
     text-decoration: none;
 }
+

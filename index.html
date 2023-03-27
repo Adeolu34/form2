@@ -10,28 +10,56 @@
 </head>
 <body>
      <div class="container">
-    <h2>Register here</h2>
-    <form action="./sucess.html" target="_blank" autocomplete="on">
-      <label for="input">First Name</label>
-      <input type="text" placeholder="First name" required><br>
-      <label for="input">Last Name</label>
-      <input type="text" placeholder="Last name" required><br>
-      <label for="input">Phone Number</label>
-      <input type="tel" placeholder="Phone Number" required><br>
-      <label for="input">Email Address</label>
-      <input type="email" placeholder="email address" required><br>
-      <label for="Gender">Gender</label>
-      <select name="gender" id="gender" form="reg" required>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="others">I'd rather prefer to say</option>
-      </select><br>
-      <label for="input">Date of Birth</label>
-      <input type="date" placeholder="select your date" required><br>
-      <label for="password">Create password</label>
-      <input type="password" placeholder="Enter Your password" required minlength="8"><br>
-      <label for="con-password">Confirm password</label>
-      <input type="password" placeholder="confirm password" required minlength="8"><br>
-      <button type="submit" value="submit" id="submit" >Register</button>
+      <h2>Register here</h2>
+      <form id="myForm" onsubmit="submitForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address">
+
+    
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+    
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">--Please choose an option--</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    
+        <button type="submit">Submit</button>
+      </form>
+    </div>  
+    
+  <script>
+    function submitForm(event) {
+
+      event.preventDefault(); // prevent the default form submission behavior
+
+    // get the form fields
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const gender = document.getElementById("gender").value;
+    const password = document.getElementById("password").value;
+
+    // validate the email using a regular expression
+    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // display a success message
+    alert("Form submitted successfully!");
+}
+
+  </script>
 </body>
 </html>
